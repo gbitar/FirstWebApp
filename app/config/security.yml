@@ -23,8 +23,7 @@ security:
         login_path: Login
         check_path: Login
         always_use_default_target_path: false
-        default_target_path: Login
-        use_referer: true
+        default_target_path: /genus/bisi
 
       logout:
         path: /logout
