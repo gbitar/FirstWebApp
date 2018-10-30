@@ -12,7 +12,7 @@ class loginController extends Controller
     /**
      * @Route("/Login", name="Login")
      */
-    public function loginAction(Request $request,AuthenticationUtils $authenticationutils)
+    public function loginAction(Request $request, AuthenticationUtils $authenticationutils)
     {
         $errors = $authenticationutils->getLastAuthenticationError();
 
@@ -27,7 +27,8 @@ class loginController extends Controller
     /**
      * @Route("/logout", name="logout")
      */
-    public function logoutAction(){
+    public function logoutAction()
+    {
 
 
     }

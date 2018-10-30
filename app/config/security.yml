@@ -10,7 +10,6 @@ security:
         db_provider:
             entity:
                 class: AppBundle:user
-                property: username
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -23,3 +22,11 @@ security:
             form_login:
                 login_path: Login
                 check_path: Login
+
+            logout:
+                    path: /logout
+                    target: /
+
+    access_control:
+        - { path: ^/Login, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
+        - { path: ^/, roles: [ IS_AUTHENTICATED_FULLY ] }
