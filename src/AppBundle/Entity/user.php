@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -10,6 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\userRepository")
+ * @UniqueEntity(fields={"email", "username"}, message="This username/email is already registered")
  */
 class user implements UserInterface
 {
@@ -25,7 +28,7 @@ class user implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255)
+     * @ORM\Column(name="username", type="string", length=255, unique=true)
      */
     private $username;
 
@@ -33,6 +36,7 @@ class user implements UserInterface
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\Email
      */
     private $email;
 
