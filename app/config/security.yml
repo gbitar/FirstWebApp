@@ -1,33 +1,36 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-    encoders:
-        AppBundle\Entity\user:
-            algorithm: bcrypt
+  encoders:
+    AppBundle\Entity\user:
+      algorithm: bcrypt
 
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        db_provider:
-            entity:
-                class: AppBundle:user
+  # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+  providers:
+    db_provider:
+      entity:
+        class: AppBundle:user
 
-    firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  firewalls:
+    # disables authentication for assets and the profiler, adapt it according to your needs
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
 
-        main:
-            anonymous: ~
-            form_login:
-                login_path: Login
-                check_path: Login
+    main:
+      anonymous: ~
+      form_login:
+        login_path: Login
+        check_path: Login
+        always_use_default_target_path: false
+        default_target_path: Login
+        use_referer: true
 
-            logout:
-                    path: /logout
-                    target: /
+      logout:
+        path: /logout
+        target: Login
 
-    access_control:
-        - { path: ^/Login, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
-        - { path: ^/register, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
-        - { path: ^/, roles: [ IS_AUTHENTICATED_FULLY ] }
+  access_control:
+  - { path: ^/Login, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
+  - { path: ^/register, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
+  - { path: ^/, roles: [ IS_AUTHENTICATED_FULLY ] }

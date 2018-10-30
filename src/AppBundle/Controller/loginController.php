@@ -11,6 +11,9 @@ class loginController extends Controller
 {
     /**
      * @Route("/Login", name="Login")
+     * @param Request $request
+     * @param AuthenticationUtils $authenticationutils
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function loginAction(Request $request, AuthenticationUtils $authenticationutils)
     {
