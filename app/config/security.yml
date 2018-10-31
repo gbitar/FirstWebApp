@@ -23,7 +23,7 @@ security:
         login_path: Login
         check_path: Login
         always_use_default_target_path: false
-        default_target_path: /genus/bisi
+        default_target_path: /tracker
 
       logout:
         path: /logout

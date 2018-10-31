@@ -19,19 +19,21 @@ class RegisterController extends Controller
      */
     public function registerAction(Request $Request, UserPasswordEncoderInterface $encoder)
     {
-        $em =$this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($Request);
-
-        if($form->isSubmitted() &&  $form->isValid()){
+        if ($form->isSubmitted() && $form->get('cancel')->isClicked()) {
+            return $this->redirectToRoute('Login');
+        } elseif ($form->isSubmitted() && $form->isValid()) {
             // Create the user
-            $user->setPassword($encoder->encodePassword($user,$user->getPassword()));
+            $user->setPassword($encoder->encodePassword($user, $user->getPassword()));
 
             $em->persist($user);
             $em->flush();
 
             return $this->redirectToRoute('Login');
+
         }
 
         return $this->render('register/register.html.twig', array(
