@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1"  resname="homepage.title">
+                <source>DocuPet web app</source>
+                <target>DocuPet web app</target>
+            </trans-unit>
+            <trans-unit id="2" resname="homepage.user">
+                 <source>Username:</source>
+                 <target>Utilisateur:</target>
+             </trans-unit>
+             <trans-unit id="3" resname="homepage.pass">
+                  <source>Password:</source>
+                  <target>Mot de passe:</target>
+              </trans-unit>
+              <trans-unit id="4" resname="homepage.connect">
+                   <source>Connect</source>
+                   <target>Se connecter</target>
+               </trans-unit>
+               <trans-unit id="5" resname="homepage.register">
+                  <source>Register</source>
+                  <target>S'enregistrer</target>
+              </trans-unit>
+              <trans-unit id="6"  resname="homepage.header">
+                  <source>Login</source>
+                  <target>S'identifier</target>
+              </trans-unit>
+              <trans-unit id="7"  resname="register.title">
+                  <source>DocuPet web app</source>
+                  <target>DocuPet web app</target>
+              </trans-unit>
+              <trans-unit id="8" resname="register.user">
+                   <source>Username</source>
+                   <target>Utilisateur</target>
+               </trans-unit>
+               <trans-unit id="9" resname="register.pass">
+                    <source>Password</source>
+                    <target>Mot de passe</target>
+                </trans-unit>
+                <trans-unit id="10" resname="register.submit">
+                     <source>Submit</source>
+                     <target>Soumettre</target>
+                 </trans-unit>
+                 <trans-unit id="11" resname="register.cancel">
+                    <source>Cancel</source>
+                    <target>Annuler</target>
+                </trans-unit>
+                <trans-unit id="12"  resname="register.header">
+                    <source>Register</source>
+                    <target>S'enregistrer</target>
+                </trans-unit>
+                <trans-unit id="13"  resname="register.mail">
+                    <source>Email</source>
+                    <target>Email</target>
+                </trans-unit>
+                <trans-unit id="14"  resname="register.pass2">
+                    <source>Repeat password</source>
+                    <target>Répéter le mot de passe</target>
+                </trans-unit>
+        </body>
+    </file>
+</xliff>

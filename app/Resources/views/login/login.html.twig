@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}DocuPet web app login{% endblock %}
+{% block title %}{% trans %}homepage.title {% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3>Login</h3>
+            <h3>{% trans %}homepage.header {% endtrans %}</h3>
         </div>
         <div class="panel-body">
             {% if errors %}
@@ -15,15 +15,15 @@
             {% endif %}
             <form action="{{ path('Login') }}" method="post" class="login-form">
                 <div class="form-group">
-                    <label for="username">Username:</label>
+                    <label for="username">{% trans %}homepage.user {% endtrans %}</label>
                     <input type="text" name="_username" id="username" class="form-control" value="{{ username }}">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password: </label>
+                    <label for="password">{% trans %}homepage.pass {% endtrans %}</label>
                     <input type="password" name="_password" id="password" class="form-control">
                 </div>
-                <button class="btn btn-success pull-right">Connect</button>
-                <a href="{{ absolute_url('/register') }}" class="btn btn-primary">Register</a>
+                <button class="btn btn-success pull-right">{% trans %}homepage.connect {% endtrans %}</button>
+                <a href="{{ absolute_url('/register') }}" class="btn btn-primary">{% trans %}homepage.register {% endtrans %}</a>
             </form>
         </div>
     </div>

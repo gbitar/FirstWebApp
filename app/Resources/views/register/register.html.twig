@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}DocuPet web app registration{% endblock %}
+{% block title %}{% trans %}register.title {% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="panel panel-info">
         <div class="panel-heading">
-            <h3 class="text-center">Register</h3>
+            <h3 class="text-center">{% trans %}register.header {% endtrans %}</h3>
         </div>
         <div class="panel-body">
             {{ form(form) }}
