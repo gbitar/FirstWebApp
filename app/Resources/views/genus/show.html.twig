@@ -3,13 +3,45 @@
 Docupet web application
 {% endblock %}
 {% block body %}
-<h1>Welcome {{ app.user.username }}</h1>
-
-
-<ul>
-    {%  for note in notes %}
-        <li>{{ note }}</li>
-    {% endfor %}
-</ul>
-
+    <div class="container">
+        <br>
+        <div class="row">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ logout_path() }}" class="btn btn-danger">Logout</a>
+            {% endif %}
+            <a href="{{ absolute_url(asset('')) }}post/create" class="btn btn-primary">Create Post</a>
+        </div>
+        <br>
+        <h3>VIEW MOVIES</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th style="max-width:700px;" scope="col">Desc</th>
+                <th scope="col">Category</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.title }}</td>
+                    <td style="max-width:700px">{{ movie.description }}</td>
+                    <td>{{ movie.category }}</td>
+                    <td>{{ movie.Rating }}</td>
+                    <td>
+                        <a href="{{ absolute_url(asset('')) }}post/show/{{ movie.id }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ absolute_url(asset('')) }}post/update/{{ movie.id }}" class="btn btn-success btn-sm">Edit</a>
+                        <a href="{{ absolute_url(asset('')) }}post/delete/{{ movie.id }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>No records found!</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

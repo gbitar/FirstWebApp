@@ -21,6 +21,7 @@ class userRepository extends \Doctrine\ORM\EntityRepository implements UserLoade
      * @param string $username The username
      *
      * @return UserInterface|null
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function loadUserByUsername($username)
     {
