@@ -7,7 +7,8 @@
         <div class="panel-heading">
             <h3>{% trans %}view.header {% endtrans %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a href="{{ logout_path() }}" class="btn btn-danger pull-right" style="margin-left:10px;">{% trans %}view.logout {% endtrans %}</a>
+                    <a href="{{ logout_path() }}" class="btn btn-danger pull-right"
+                       style="margin-left:10px;">{% trans %}view.logout {% endtrans %}</a>
                 {% endif %}
             </h3>
         </div>
