@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Docupet web application
+{% endblock %}
+{% block body %}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>VIEW MOVIES
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a href="{{ logout_path() }}" class="btn btn-danger pull-right" style="margin-left:10px;">Logout</a>
+                {% endif %}
+            </h3>
+        </div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th style="max-width:700px;" scope="col">Desc</th>
+                <th scope="col">Category</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.title }}</td>
+                    <td style="max-width:700px">{{ movie.description }}</td>
+                    <td>{{ movie.category }}</td>
+                    <td>{{ movie.Rating }} / 10</td>
+                    <td>
+                        <a href="{{ absolute_url(asset('')) }}movies/show/{{ movie.id }}"
+                           class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ absolute_url(asset('')) }}movies/update/{{ movie.id }}"
+                           class="btn btn-success btn-sm">Edit</a>
+                        <a href="{{ absolute_url(asset('')) }}movies/delete/{{ movie.id }}"
+                           class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>No records found!</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ absolute_url(asset('')) }}movies/create" class="btn btn-primary pull-right"
+           style="margin-top:10px;">Create Movie</a>
+    </div>
+{% endblock %}

@@ -7,12 +7,12 @@
                 <target>DocuPet web app</target>
             </trans-unit>
             <trans-unit id="2" resname="homepage.user">
-                 <source>Username:</source>
-                 <target>Utilisateur:</target>
+                 <source>Username</source>
+                 <target>Utilisateur</target>
              </trans-unit>
              <trans-unit id="3" resname="homepage.pass">
-                  <source>Password:</source>
-                  <target>Mot de passe:</target>
+                  <source>Password</source>
+                  <target>Mot de passe</target>
               </trans-unit>
               <trans-unit id="4" resname="homepage.connect">
                    <source>Connect</source>
