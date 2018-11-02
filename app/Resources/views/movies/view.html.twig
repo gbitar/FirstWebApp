@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-    Docupet web application
+    {% trans %} view.title {% endtrans %}
 {% endblock %}
 {% block body %}
     <div class="panel panel-info">
         <div class="panel-heading">
-            <h3>VIEW MOVIE
+            <h3>{% trans %}view.header {% endtrans %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a href="{{ logout_path() }}" class="btn btn-danger pull-right" style="margin-left:10px;">Logout</a>
+                    <a href="{{ logout_path() }}" class="btn btn-danger pull-right" style="margin-left:10px;">{% trans %} view.logout {% endtrans %}</a>
                 {% endif %}
             </h3>
         </div>
@@ -17,7 +17,7 @@
         <p class="list-group-item" >{{ movie.category }}</p>
         <p class="list-group-item" >{{ movie.rating }}/10</p>
         <p class="list-group-item" >
-            <a href="{{ absolute_url(asset('')) }}movies" class="btn btn-primary">Back</a>
+            <a href="{{ absolute_url(asset('')) }}movies" class="btn btn-primary">{% trans %}view.back {% endtrans %}</a>
         </p>
     </div>
 </div>

@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Translation\Translator;
 
 class MoviesController extends Controller
 {
@@ -38,20 +39,30 @@ class MoviesController extends Controller
     public function createAction(Request $request)
     {
         $username = $this->getUser()->getUsername();
-
+        $translator = new Translator('fr_FR');
         $movie = new movies();
         $form = $this->createFormBuilder($movie)
-            ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control')))
-            ->add('category', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('rating', IntegerType::class, array('attr' => array('class' => 'form-control', 'min' =>0, 'max' =>10)))
+            ->add('title', TextType::class, array(
+                'label' =>  $translator->trans('create.movieTitle'),
+                'attr' => array('class' => 'form-control')))
+            ->add('description', TextareaType::class, array(
+                'label' =>  $translator->trans('create.movieDescription'),
+                'attr' => array('class' => 'form-control')))
+            ->add('category', TextType::class, array(
+                'label' =>  $translator->trans('create.movieCategory'),
+                'attr' => array('class' => 'form-control')))
+            ->add('rating', IntegerType::class, array(
+                'label' =>  $translator->trans('create.movieRating'),
+                'attr' =>  array(
+                    'class' => 'form-control',
+                    'min' =>0, 'max' =>10)))
             ->add('save', SubmitType::class, array(
-                'label' => 'Create movie',
+                'label' =>  $translator->trans('create.submit'),
                 'attr' => array(
                     'class' => 'btn btn-success pull-right',
                     'style' => 'margin-top: 10px; margin-left: 10px;')))
             ->add('cancel', SubmitType::class, array(
-                'label' => 'Cancel',
+                'label' =>  $translator->trans('create.cancel'),
                 'attr' => array(
                     'class' => 'btn btn-danger pull-right',
                     'style' => 'margin-top: 10px;',
@@ -91,18 +102,27 @@ class MoviesController extends Controller
     {
         $movie = $this->getDoctrine()->getRepository('AppBundle:movies')->find($id);
         $username = $this->getUser()->getUsername();
+        $translator = new Translator('fr_FR');
         $form = $this->createFormBuilder($movie)
-            ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control')))
-            ->add('category', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('rating', IntegerType::class, array('attr' => array('class' => 'form-control', 'min' =>0, 'max' =>10)))
+            ->add('title', TextType::class, array(
+                'label' =>  $translator->trans('create.movieTitle'),
+                'attr' => array('class' => 'form-control')))
+            ->add('description', TextareaType::class, array(
+                'label' =>  $translator->trans('create.movieDescription'),
+                'attr' => array('class' => 'form-control')))
+            ->add('category', TextType::class, array(
+                'label' =>  $translator->trans('create.movieCategory'),
+                'attr' => array('class' => 'form-control')))
+            ->add('rating', IntegerType::class, array(
+                'label' =>  $translator->trans('create.movieRating'),
+                'attr' => array('class' => 'form-control', 'min' =>0, 'max' =>10)))
             ->add('save', SubmitType::class, array(
-                'label' => 'Update movie',
+                'label' => $translator->trans('update.submit'),
                 'attr' => array(
                     'class' => 'btn btn-success pull-right',
                     'style' => 'margin-top: 10px; margin-left: 10px;')))
             ->add('cancel', SubmitType::class, array(
-                'label' => 'Cancel',
+                'label' =>  $translator->trans('create.cancel'),
                 'attr' => array(
                     'class' => 'btn btn-danger pull-right',
                     'style' => 'margin-top: 10px;',

@@ -2,62 +2,142 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="1"  resname="homepage.title">
+        <trans-unit id="1"  resname="homepage.title">
+                <source>DocuPet web app</source>
+                <target>DocuPet web app</target>
+        </trans-unit>
+        <trans-unit id="2" resname="homepage.user">
+                 <source>Username</source>
+                 <target>Utilisateur</target>
+         </trans-unit>
+         <trans-unit id="3" resname="homepage.pass">
+              <source>Password</source>
+              <target>Mot de passe</target>
+          </trans-unit>
+          <trans-unit id="4" resname="homepage.connect">
+               <source>Connect</source>
+               <target>Se connecter</target>
+           </trans-unit>
+           <trans-unit id="5" resname="homepage.register">
+              <source>Register</source>
+              <target>S'enregistrer</target>
+          </trans-unit>
+          <trans-unit id="6"  resname="homepage.header">
+              <source>Login</source>
+              <target>S'identifier</target>
+          </trans-unit>
+          <trans-unit id="7"  resname="register.title">
+              <source>DocuPet web app</source>
+              <target>DocuPet web app</target>
+          </trans-unit>
+          <trans-unit id="8" resname="register.user">
+               <source>Username</source>
+               <target>Utilisateur</target>
+           </trans-unit>
+           <trans-unit id="9" resname="register.pass">
+                <source>Password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="10" resname="register.submit">
+                 <source>Submit</source>
+                 <target>Soumettre</target>
+             </trans-unit>
+             <trans-unit id="11" resname="register.cancel">
+                <source>Cancel</source>
+                <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="12"  resname="register.header">
+                <source>Register</source>
+                <target>S'enregistrer</target>
+            </trans-unit>
+            <trans-unit id="13"  resname="register.mail">
+                <source>Email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="14"  resname="register.pass2">
+                <source>Repeat password</source>
+                <target>Répéter le mot de passe</target>
+            </trans-unit>
+            <trans-unit id="15"  resname="create.header">
                 <source>DocuPet web app</source>
                 <target>DocuPet web app</target>
             </trans-unit>
-            <trans-unit id="2" resname="homepage.user">
-                 <source>Username</source>
-                 <target>Utilisateur</target>
-             </trans-unit>
-             <trans-unit id="3" resname="homepage.pass">
-                  <source>Password</source>
-                  <target>Mot de passe</target>
-              </trans-unit>
-              <trans-unit id="4" resname="homepage.connect">
-                   <source>Connect</source>
-                   <target>Se connecter</target>
-               </trans-unit>
-               <trans-unit id="5" resname="homepage.register">
-                  <source>Register</source>
-                  <target>S'enregistrer</target>
-              </trans-unit>
-              <trans-unit id="6"  resname="homepage.header">
-                  <source>Login</source>
-                  <target>S'identifier</target>
-              </trans-unit>
-              <trans-unit id="7"  resname="register.title">
-                  <source>DocuPet web app</source>
-                  <target>DocuPet web app</target>
-              </trans-unit>
-              <trans-unit id="8" resname="register.user">
-                   <source>Username</source>
-                   <target>Utilisateur</target>
-               </trans-unit>
-               <trans-unit id="9" resname="register.pass">
-                    <source>Password</source>
-                    <target>Mot de passe</target>
-                </trans-unit>
-                <trans-unit id="10" resname="register.submit">
-                     <source>Submit</source>
-                     <target>Soumettre</target>
-                 </trans-unit>
-                 <trans-unit id="11" resname="register.cancel">
-                    <source>Cancel</source>
-                    <target>Annuler</target>
-                </trans-unit>
-                <trans-unit id="12"  resname="register.header">
-                    <source>Register</source>
-                    <target>S'enregistrer</target>
-                </trans-unit>
-                <trans-unit id="13"  resname="register.mail">
-                    <source>Email</source>
-                    <target>Email</target>
-                </trans-unit>
-                <trans-unit id="14"  resname="register.pass2">
-                    <source>Repeat password</source>
-                    <target>Répéter le mot de passe</target>
-                </trans-unit>
+            <trans-unit id="16"  resname="create.title">
+                <source>INSERT MOVIE</source>
+                <target>Insérer un film</target>
+            </trans-unit>
+            <trans-unit id="17"  resname="create.logout">
+                <source>Logout</source>
+                <target>Déconnexion</target>
+            </trans-unit>
+            <trans-unit id="18"  resname="create.movieTitle">
+                <source>Title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="19"  resname="create.movieDescription">
+                <source>Description</source>
+                <target>Déscription</target>
+            </trans-unit>
+            <trans-unit id="20"  resname="create.movieCategory">
+                <source>Category</source>
+                <target>Catégorie</target>
+            </trans-unit>
+            <trans-unit id="21"  resname="create.movieRating">
+                <source>Rating</source>
+                <target>Classement</target>
+            </trans-unit>
+            <trans-unit id="22"  resname="create.submit">
+                <source>Create Movie</source>
+                <target>Insérer film</target>
+            </trans-unit>
+            <trans-unit id="23"  resname="create.cancel">
+                <source>Cancel</source>
+                <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="24"  resname="view.header">
+                <source>VIEW MOVIE</source>
+                <target>VISUALISER FILM</target>
+            </trans-unit>
+            <trans-unit id="25"  resname="view.title">
+                <source>DocuPet web app</source>
+                <target>DocuPet web app</target>
+            </trans-unit>
+            <trans-unit id="26"  resname="view.back">
+                <source>Back</source>
+                <target>Retour</target>
+            </trans-unit>
+            <trans-unit id="27"  resname="view.logout">
+                <source>Logout</source>
+                <target>Déconnexion</target>
+            </trans-unit>
+             <trans-unit id="28"  resname="update.submit">
+                <source>Update Movie</source>
+                <target>mise à jour</target>
+            </trans-unit>
+            <trans-unit id="29"  resname="update.title">
+                <source>UPDATE MOVIE</source>
+                <target>MISE A JOUR FILM</target>
+            </trans-unit>
+            <trans-unit id="30"  resname="view.action">
+                <source>Action</source>
+                <target>Action</target>
+            </trans-unit>
+            <trans-unit id="31"  resname="view.visualize">
+                <source>View</source>
+                <target>Visualiser</target>
+            </trans-unit>
+            <trans-unit id="32"  resname="view.edit">
+                <source>Edit</source>
+                <target>Modification</target>
+            </trans-unit>
+            <trans-unit id="33"  resname="view.delete">
+                <source>Delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="34"  resname="view.create">
+                <source>Create movie</source>
+                <target>Créer film</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
