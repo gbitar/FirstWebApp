@@ -23,8 +23,8 @@
               <target>S'enregistrer</target>
           </trans-unit>
           <trans-unit id="6"  resname="homepage.header">
-              <source>Login</source>
-              <target>S'identifier</target>
+              <source>MY MOVIES DIRECTORY</source>
+              <target>ANNUAIRE DE MES FILMS</target>
           </trans-unit>
           <trans-unit id="7"  resname="register.title">
               <source>DocuPet web app</source>

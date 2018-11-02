@@ -16,9 +16,8 @@
         <p class="list-group-item" >{{ movie.description }}</p>
         <p class="list-group-item" >{{ movie.category }}</p>
         <p class="list-group-item" >{{ movie.rating }}/10</p>
-        <p class="list-group-item" >
-            <a href="{{ absolute_url(asset('')) }}movies" class="btn btn-primary">{% trans %}view.back {% endtrans %}</a>
-        </p>
+
     </div>
+        <a href="{{ absolute_url(asset('')) }}movies" class="btn btn-primary pull-right" style="margin-top:10px;">{% trans %}view.back {% endtrans %}</a>
 </div>
 {% endblock %}

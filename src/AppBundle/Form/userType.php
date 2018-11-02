@@ -41,6 +41,7 @@ class userType extends AbstractType
                 'label' => $translator->trans('register.cancel'),
                 'attr' => array(
                     'class' => 'btn btn-danger pull-right',
+                    'style' => 'margin-left: 10px;',
                     'formnovalidate' => 'formnovalidate',
                     'name' => $translator->trans('register.cancel')
                 )
