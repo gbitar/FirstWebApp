@@ -25,12 +25,23 @@ class MoviesController extends Controller
      * @Route("/movies", name="view_all_movies")
      */
     // This function is the controller
-    public function showAction()
+    public function showAction(Request $request)
     {
+
         $username = $this->getUser()->getUsername();
         $movie = $this->getDoctrine()->getRepository('AppBundle:movies')->findBy(array('createdBy' => $username));
+        /**
+         * @var Knp\Component\Pager\Paginator
+         * page and limit can be added to the url to change the values
+         */
+        $paginator = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $movie,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 10)
+        );
 
-         return $this->render('movies/show.html.twig', ['movies' => $movie]);
+        return $this->render('movies/show.html.twig', ['movies' => $result]);
     }
 
     /**
@@ -43,26 +54,26 @@ class MoviesController extends Controller
         $movie = new movies();
         $form = $this->createFormBuilder($movie)
             ->add('title', TextType::class, array(
-                'label' =>  $translator->trans('create.movieTitle'),
+                'label' => $translator->trans('create.movieTitle'),
                 'attr' => array('class' => 'form-control')))
             ->add('description', TextareaType::class, array(
-                'label' =>  $translator->trans('create.movieDescription'),
+                'label' => $translator->trans('create.movieDescription'),
                 'attr' => array('class' => 'form-control')))
             ->add('category', TextType::class, array(
-                'label' =>  $translator->trans('create.movieCategory'),
+                'label' => $translator->trans('create.movieCategory'),
                 'attr' => array('class' => 'form-control')))
             ->add('rating', IntegerType::class, array(
-                'label' =>  $translator->trans('create.movieRating'),
-                'attr' =>  array(
+                'label' => $translator->trans('create.movieRating'),
+                'attr' => array(
                     'class' => 'form-control',
-                    'min' =>0, 'max' =>10)))
+                    'min' => 0, 'max' => 10)))
             ->add('save', SubmitType::class, array(
-                'label' =>  $translator->trans('create.submit'),
+                'label' => $translator->trans('create.submit'),
                 'attr' => array(
                     'class' => 'btn btn-success pull-right',
                     'style' => 'margin-top: 10px; margin-left: 10px;')))
             ->add('cancel', SubmitType::class, array(
-                'label' =>  $translator->trans('create.cancel'),
+                'label' => $translator->trans('create.cancel'),
                 'attr' => array(
                     'class' => 'btn btn-danger pull-right',
                     'style' => 'margin-top: 10px;',
@@ -72,8 +83,7 @@ class MoviesController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->get('cancel')->isClicked()) {
             return $this->redirectToRoute('view_all_movies');
-        }
-        elseif($form->isSubmitted() && $form->isValid()) {
+        } elseif ($form->isSubmitted() && $form->isValid()) {
             $title = $form['title']->getData();
             $description = $form['description']->getData();
             $category = $form['category']->getData();
@@ -105,24 +115,24 @@ class MoviesController extends Controller
         $translator = new Translator('fr_FR');
         $form = $this->createFormBuilder($movie)
             ->add('title', TextType::class, array(
-                'label' =>  $translator->trans('create.movieTitle'),
+                'label' => $translator->trans('create.movieTitle'),
                 'attr' => array('class' => 'form-control')))
             ->add('description', TextareaType::class, array(
-                'label' =>  $translator->trans('create.movieDescription'),
+                'label' => $translator->trans('create.movieDescription'),
                 'attr' => array('class' => 'form-control')))
             ->add('category', TextType::class, array(
-                'label' =>  $translator->trans('create.movieCategory'),
+                'label' => $translator->trans('create.movieCategory'),
                 'attr' => array('class' => 'form-control')))
             ->add('rating', IntegerType::class, array(
-                'label' =>  $translator->trans('create.movieRating'),
-                'attr' => array('class' => 'form-control', 'min' =>0, 'max' =>10)))
+                'label' => $translator->trans('create.movieRating'),
+                'attr' => array('class' => 'form-control', 'min' => 0, 'max' => 10)))
             ->add('save', SubmitType::class, array(
                 'label' => $translator->trans('update.submit'),
                 'attr' => array(
                     'class' => 'btn btn-success pull-right',
                     'style' => 'margin-top: 10px; margin-left: 10px;')))
             ->add('cancel', SubmitType::class, array(
-                'label' =>  $translator->trans('create.cancel'),
+                'label' => $translator->trans('create.cancel'),
                 'attr' => array(
                     'class' => 'btn btn-danger pull-right',
                     'style' => 'margin-top: 10px;',
@@ -132,8 +142,7 @@ class MoviesController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->get('cancel')->isClicked()) {
             return $this->redirectToRoute('view_all_movies');
-        }
-        elseif($form->isSubmitted() && $form->isValid()) {
+        } elseif ($form->isSubmitted() && $form->isValid()) {
             $title = $form['title']->getData();
             $description = $form['description']->getData();
             $category = $form['category']->getData();

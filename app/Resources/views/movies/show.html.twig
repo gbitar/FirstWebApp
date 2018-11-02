@@ -45,6 +45,9 @@
             {% endfor %}
             </tbody>
         </table>
+        <div class="navigation">
+            {{ knp_pagination_render(movies) }}
+        </div>
         <a href="{{ absolute_url(asset('')) }}movies/create" class="btn btn-primary pull-right"
            style="margin-top:10px;">{% trans %} view.create {% endtrans %}</a>
     </div>
